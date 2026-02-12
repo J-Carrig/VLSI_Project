@@ -18,7 +18,7 @@ reg [63:0] array_a [0:cases-1];
 reg [63:0] array_b [0:cases-1];
 reg [63:0] array_out [0:cases-1];
 integer i,j;
-parameter cases = 44;
+parameter cases = 2005;
 
 initial
     begin

@@ -1,19 +1,19 @@
 %Generator of file for add module
 
 %Simple cases of addition
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+Input_1a = rand(1000,1);
+Input_1b = rand(1000,1);
 
 Output_1= Input_1a + Input_1b;
 
 %Simple cases of substraction
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+Input_2a = rand(1000,1);
+Input_2b = -rand(1000,1);
 Output_2= Input_2a + Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
-Input_3a = [inf;-inf;nan;0];
-Input_3b = rand(4,1);
+Input_3a = [inf;-inf;-inf;nan;0];
+Input_3b = [inf;-inf;inf;4;4];
 Output_3= Input_3a + Input_3b;
 
 %concat the inputs and the output
