@@ -31,11 +31,13 @@ initial
   		  output_z_ack = 1'b1;
         $readmemh("add_stim_a.txt" , array_a ); // initialize memory a
         $readmemh("add_stim_b.txt" , array_b );// initialize memory b
-		  $readmemh("add_output.txt" , array_out );// Initialize output memory
+		    $readmemh("add_output.txt" , array_out );// Initialize output memory
         Tin_a = 64'h0;
         Tin_b = 64'h0;
         #10 rst = ~rst;
         #10 rst = ~rst;
+        $dumpfile("gtk_double_adder.vcd");
+        $dumpvars(0, double_adder_tb);
     end
 
 always
