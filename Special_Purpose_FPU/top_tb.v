@@ -69,6 +69,8 @@ initial
 
 
 begin
+  $dumpfile("gtk_top.vcd");
+  $dumpvars(0, top_tb);
   rst = 1'b0 ;
   clk = 1'b0 ;
  #100

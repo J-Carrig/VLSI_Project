@@ -25,6 +25,8 @@ integer i,j,k;
 
 initial
     begin
+        $dumpfile("gtk_arithmetics_unit_tb.vcd");
+        $dumpvars(0, arithmetic_unit_tb);
 	     for(k=0;k<132;k=k+3)
 		   begin
 		    array_op[k]=2'b00;

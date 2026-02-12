@@ -23,6 +23,8 @@ parameter cases = 44;
 
 initial
     begin
+        $dumpfile("gtk_double_divider.vcd");
+        $dumpvars(0, double_divider_tb);
         clk = 0;
         rst = 0;
         i = 0;

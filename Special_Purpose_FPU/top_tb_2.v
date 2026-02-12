@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module top_tb();
+module top_tb_2();
 reg clk;
 reg rst;
 wire [15:0]input_a;
@@ -22,7 +22,8 @@ parameter cases=9;
 
 initial
     begin
-
+        $dumpfile("gtk_top2.vcd");
+        $dumpvars(0, top_tb_2);
         array_op[0]=10'b000000001;
         array_op[1]=10'b000001001;
         array_op[2]=10'b010101001;

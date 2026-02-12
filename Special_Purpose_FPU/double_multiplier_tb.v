@@ -23,6 +23,8 @@ parameter cases = 44;
 
 initial
     begin
+        $dumpfile("gtk_double_multiplier.vcd");
+        $dumpvars(0, double_multiplier_tb);
         clk = 0;
         rst = 0;
         i = 0;
