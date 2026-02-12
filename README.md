@@ -16,7 +16,7 @@ all files are dumped in one folder.
 
 .out files (testbenches) to be saved as tb_xxx_xxx.out (e.g. tb_double_adder.tb)
 
-.vcd files (waveforms) to be saves as gtk_xxx_xxx.vcd (e.g gtk_double-adder.tb)
+.vcd files (waveforms) to be saved as gtk_xxx_xxx.vcd (e.g gtk_double-adder.tb)
 
-
+**NOTE** .vcd files are too big for github and wont be saved to github. run locally to get them for testing
 
