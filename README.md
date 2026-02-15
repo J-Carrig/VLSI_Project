@@ -20,3 +20,10 @@ all files are dumped in one folder.
 
 **NOTE** .vcd files are too big for github and wont be saved to github. run locally to get them for testing
 
+## GTKWave
+.vcd files must be generated locally in order to view in GTKWave.
+
+when file is open:
+1. Double click vcd file name in top left corner - this will list all the waves in bottom left box.
+2. In bottom left box, click on any wave, then press ctrl+a to highlight all, and press 'append'.
+3. When waveforms are open, set input and output data format to bits to real" to view actual data value.
