@@ -1,14 +1,14 @@
 %Generator of file for add module
 
 %Simple cases of addition
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+Input_1a = rand(1000,1);
+Input_1b = rand(1000,1);
 
 Output_1= Input_1a + Input_1b;
 
 %Simple cases of substraction
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+Input_2a = rand(1000,1);
+Input_2b = -rand(1000,1);
 Output_2= Input_2a + Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
@@ -27,14 +27,14 @@ Final_Output_add= [Output_1;Output_2;Output_3];
 %Generator of file for div module
 
 %Simple cases of multiplication
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+Input_1a = rand(1000,1);
+Input_1b = rand(1000,1);
 
 Output_1= Input_1a ./ Input_1b;
 
 %Simple cases of division that has negative result
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+Input_2a = rand(1000,1);
+Input_2b = -rand(1000,1);
 Output_2= Input_2a ./ Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
@@ -53,14 +53,14 @@ Final_Output_div= [Output_1;Output_2;Output_3];
 %Generator of file for mult module
 
 %Simple cases of division
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+Input_1a = rand(2000,1);
+Input_1b = rand(2000,1);
 
 Output_1= Input_1a .* Input_1b;
 
 %Simple cases ofmultiplication that has negative result
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+Input_2a = rand(2000,1);
+Input_2b = -rand(2000,1);
 Output_2= Input_2a .* Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
@@ -76,7 +76,7 @@ Final_Input_a=0;
 Final_Input_b=0;
 Final_Output=0;
 
-for i=1:44
+for i=1:2004
 Final_Input_a = [Final_Input_a;Final_Input_a_add(i);Final_Input_a_div(i);Final_Input_a_mult(i)];
 Final_Input_b = [Final_Input_b;Final_Input_b_add(i);Final_Input_b_div(i);Final_Input_b_mult(i)];
 Final_Output = [Final_Output;Final_Output_add(i);Final_Output_div(i);Final_Output_mult(i)];
@@ -88,9 +88,9 @@ fid = fopen('arithmetics_stim_a.txt', 'wt');
 fid2 = fopen('arithmetics_stim_b.txt', 'wt');
 fid3= fopen('arithmetics_output.txt', 'wt');
 
-fprintf(fid, '%bx\n', Final_Input_a(2:133));
-fprintf(fid2, '%bx\n', Final_Input_b(2:133));
-fprintf(fid3, '%bx\n', Final_Output(2:133));
+fprintf(fid, '%bx\n', Final_Input_a(2:6013));
+fprintf(fid2, '%bx\n', Final_Input_b(2:6013));
+fprintf(fid3, '%bx\n', Final_Output(2:6013));
 
 fclose(fid);
 fclose(fid2);

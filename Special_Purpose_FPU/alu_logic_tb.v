@@ -1,8 +1,8 @@
 `timescale 1ns/1ps
 
-module arithmetics_unit_tb();
+module alu_logic_tb();
 
-parameter cases = 6012;
+parameter cases = 4;
 
 reg clk;
 reg rst;
@@ -25,24 +25,23 @@ integer i,j,k;
 
 initial
     begin
-        $dumpfile("gtk_arithmetics_unit_tb.vcd");
-        $dumpvars(0, arithmetics_unit_tb);
-	     for(k=0;k<6012;k=k+3)
-		   begin
-		    array_op[k]=2'b00;
-			 array_op[k+1]=2'b01;
-			 array_op[k+2]=2'b10;
-			end
-	     
+        $dumpfile("gtk_alu_logic_tb.vcd");
+        $dumpvars(0, alu_logic_tb);
+		   
+		    array_op[0]=2'b00;
+			  array_op[1]=2'b01;
+			  array_op[2]=2'b10;
+				array_op[3]=2'b11;
+
         clk = 0;
         rst = 0;
         i = 0;
   		  j=0;
         enable=1;
 		  enable_function=1;
-        $readmemh("arithmetics_stim_a.txt" , array_a ); // initialize memory a
-        $readmemh("arithmetics_stim_b.txt" , array_b );// initialize memory b
-		  $readmemh("arithmetics_output.txt" , array_out );// Initialize output memory
+        $readmemh("alu_logic_stim_a.txt" , array_a ); // initialize memory a
+        $readmemh("alu_logic_stim_b.txt" , array_b );// initialize memory b
+		  $readmemh("alu_logic_output.txt" , array_out );// Initialize output memory
         Tin_a = 64'h0;
         Tin_b = 64'h0;
         #10 rst = ~rst;
