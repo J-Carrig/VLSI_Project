@@ -49,7 +49,7 @@
 */
 
 
-module top_tb;
+module top_fpu_tb;
 
 
 reg enable;
@@ -69,8 +69,8 @@ initial
 
 
 begin
-  $dumpfile("gtk_top.vcd");
-  $dumpvars(0, top_tb);
+  $dumpfile("gtk_top_fpu_tb.vcd");
+  $dumpvars(0, top_fpu_tb);
   rst = 1'b0 ;
   clk = 1'b0 ;
  #100
