@@ -12,8 +12,8 @@ Input_2b = -rand(1000,1);
 Output_2= Input_2a + Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
-Input_3a = [inf;-inf;-inf;nan;0];
-Input_3b = [inf;-inf;inf;4;4];
+Input_3a = [2;2;-2;2;0;-0;inf;inf;-inf;-inf;inf;inf;inf;nan;nan;-nan;-nan;nan;nan;nan];
+Input_3b = [0;-0;2;-2;-2;2;inf;-inf;-inf;inf;2;-2;0;nan;-nan;-nan;nan;2;-2;0];
 Output_3= Input_3a + Input_3b;
 
 %concat the inputs and the output

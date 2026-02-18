@@ -1,14 +1,14 @@
 %Generator of file for div module
 
 %Simple cases of multiplication
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+Input_1a = rand(1000,1);
+Input_1b = rand(1000,1);
 
 Output_1= Input_1a ./ Input_1b;
 
 %Simple cases of division that has negative result
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+Input_2a = rand(1000,1);
+Input_2b = -rand(1000,1);
 Output_2= Input_2a ./ Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
