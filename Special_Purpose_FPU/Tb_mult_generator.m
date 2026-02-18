@@ -1,19 +1,19 @@
 %Generator of file for mult module
 
-%Simple cases of division
-Input_1a = rand(20,1);
-Input_1b = rand(20,1);
+%Simple cases of multiplication
+Input_1a = rand(1000,1);
+Input_1b = rand(1000,1);
 
 Output_1= Input_1a .* Input_1b;
 
-%Simple cases ofmultiplication that has negative result
-Input_2a = rand(20,1);
-Input_2b = -rand(20,1);
+%Simple cases o fmultiplication that has negative result
+Input_2a = rand(1000,1);
+Input_2b = -rand(1000,1);
 Output_2= Input_2a .* Input_2b;
 
 %Edge_cases (Nan,add 0,infinity)
-Input_3a = rand(4,1);
-Input_3b = [inf;-inf;nan;0];
+Input_3a = [2; 2; -2; 2; 0; -0; inf; inf; -inf; -inf; inf; inf; inf; NaN; NaN; -NaN; -NaN; NaN; NaN; NaN];
+Input_3b = [0; -0; 2; -2; -2; +2; inf; -inf; -inf; +inf; 2; -2; 0; NaN; -NaN; -NaN; +NaN; 2; -2; 0];
 Output_3= Input_3a .* Input_3b;
 
 %concat the inputs and the output
