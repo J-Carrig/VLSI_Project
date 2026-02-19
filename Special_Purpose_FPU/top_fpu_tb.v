@@ -60,7 +60,7 @@ reg clk;
 wire [63:0] data1;
 
 
-top u1 (.enable(enable), .degrees(degrees), .data1(data1), .rst(rst), .actv(actv), .clk(clk));
+function_unit u1 (.enable(enable), .degrees(degrees), .data1(data1), .rst(rst), .actv(actv), .clk(clk), .done(done));
 
 always  #5 clk = !clk;
 
