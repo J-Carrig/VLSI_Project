@@ -1,5 +1,5 @@
 double_adder.v
-doubler_multiplier.v
+double_multiplier.v
 double_divider.v
 Arithmetics.v
 Control_unit.v
