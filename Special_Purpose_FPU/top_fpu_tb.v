@@ -103,7 +103,7 @@ begin
 else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd112;
@@ -121,7 +121,7 @@ enable = 1'b0;
 else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd199;
@@ -140,7 +140,7 @@ enable = 1'b0;
 else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
@@ -162,7 +162,7 @@ enable = 1'b0;
 else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd400;
@@ -180,7 +180,7 @@ else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
@@ -203,7 +203,7 @@ else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd156;
@@ -224,13 +224,13 @@ enable = 1'b0;
 else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
-enable = 1'b0;
+enable <= 1'b0;
  @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd8769;
   actv <= 3'b001;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -246,13 +246,13 @@ else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd2240;
   actv <= 3'b101;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -269,13 +269,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd346;
   actv <= 3'b000;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -291,13 +291,13 @@ else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd789;
   actv <= 3'b010;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -314,7 +314,7 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
@@ -337,13 +337,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd1027;
   actv <= 3'b011;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -360,13 +360,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd12679;
   actv <= 3'b000;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -382,13 +382,13 @@ else
 	$display($time,"ps Error! for input %d out is incorrect %h", degrees, data1);
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd127;
   actv <= 3'b100;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -406,13 +406,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd40;
   actv <= 3'b101;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -430,13 +430,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd299;
   actv <= 3'b010;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -453,13 +453,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd186;
   actv <= 3'b001;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -476,13 +476,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd225;
   actv <= 3'b001;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -499,13 +499,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
   @(posedge clk) ;
   @(posedge clk) ;
   @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd9999;
   actv <= 3'b000;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -519,13 +519,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
  @(posedge clk) ;
  @(posedge clk) ;
  @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd1800;
   actv <= 3'b010;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
@@ -542,13 +542,13 @@ else
 
 
 
-enable = 1'b0;
+enable <= 1'b0;
  @(posedge clk) ;
  @(posedge clk) ;
  @(posedge clk) ;
   degrees <= `INPUT_WIDTH'd4020;
   actv <= 3'b011;
-  enable = 1'b1;
+  enable <= 1'b1;
 
  @(posedge clk) ;
  @(posedge clk) ;
