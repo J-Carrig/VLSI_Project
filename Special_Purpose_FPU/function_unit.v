@@ -56,6 +56,7 @@ reg [63:0] data_tmp;
 reg done_temp;
 reg [`INPUT_WIDTH-1:0] degrees_tmp1;
 reg [`INPUT_WIDTH-1:0] degrees_tmp2;
+reg [`INPUT_WIDTH-1:0] degrees_unit; // for repeated circles
 reg [1:0] quad;
 reg sin_enable, cos_enable, tan_enable, csc_enable, sec_enable, cot_enable;
 
@@ -111,7 +112,10 @@ end
 
  always@(posedge clk)
   begin
-    
+
+  degrees_unit <= degrees % 360;  // now will return values between 0 and 359  
+
+
 	 if( enable == 1'b1)
 		  done_temp <=1'b1;
 		else
@@ -122,28 +126,28 @@ end
 		else
 		  actv_temp <=actv_temp;
 
-  if (degrees > `INPUT_WIDTH'd270)
+  if (degrees_unit > `INPUT_WIDTH'd270)
 	begin
 	quad <= 2'b11;
-	degrees_tmp2 <= degrees - `INPUT_WIDTH'd270;
+	degrees_tmp2 <= degrees_unit - `INPUT_WIDTH'd360; // normalises to x axis
    	end
    else
 
-	if (degrees > `INPUT_WIDTH'd180 && (degrees < `INPUT_WIDTH'd270 || degrees == `INPUT_WIDTH'd270))
+	if (degrees_unit > `INPUT_WIDTH'd180 && (degrees_unit < `INPUT_WIDTH'd270 || degrees_unit == `INPUT_WIDTH'd270))
 	begin
 	quad <= 2'b10;
-	degrees_tmp2 <= degrees - `INPUT_WIDTH'd180;
+	degrees_tmp2 <= degrees_unit - `INPUT_WIDTH'd180;
 	end
 	else
 
-	if (degrees > `INPUT_WIDTH'd90 && (degrees < `INPUT_WIDTH'd180 || degrees == `INPUT_WIDTH'd180))
+	if (degrees_unit > `INPUT_WIDTH'd90 && (degrees_unit < `INPUT_WIDTH'd180 || degrees_unit == `INPUT_WIDTH'd180))
 		begin
-		degrees_tmp2 <= `INPUT_WIDTH'd180 - degrees;
+		degrees_tmp2 <= `INPUT_WIDTH'd180 - degrees_unit;
 		quad <= 2'b01;
 		end
 	else
 		begin
-		degrees_tmp2 <= degrees;
+		degrees_tmp2 <= degrees_unit;
 		quad <= 2'b00;
 		end
 	end  // >360
