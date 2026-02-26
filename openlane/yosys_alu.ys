@@ -1,0 +1,23 @@
+# Read RTL Design
+read_verilog alu.v
+hierarchy -check -top alu
+# High-Level Synthesis (RTL lowering)
+proc
+opt
+memory
+opt
+fsm
+opt
+# Technology Mapping Preparation
+techmap
+opt
+#Load Standard-Cell Library
+read_liberty -lib sg13g2_stdcell_typ_1p20V_25C.lib
+# Sequential Cell Mapping
+dfflibmap -liberty sg13g2_stdcell_typ_1p20V_25C.lib
+# Combinational Logic Mapping (ABC)
+abc -liberty sg13g2_stdcell_typ_1p20V_25C.lib -D 10000
+#Cleanup & Output
+clean
+write_verilog adder_synth.v
+write_ilang adder_ilang.il
