@@ -19,5 +19,5 @@ dfflibmap -liberty sg13g2_stdcell_typ_1p20V_25C.lib
 abc -liberty sg13g2_stdcell_typ_1p20V_25C.lib -D 10000
 #Cleanup & Output
 clean
-write_verilog adder_synth.v
-write_ilang adder_ilang.il
+write_verilog alu_synth.v
+write_ilang alu_ilang.il
