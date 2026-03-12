@@ -1,0 +1,13 @@
+read_liberty -lib sg13g2_stdcell_typ_1p20V_25C.lib
+read_verilog double_adder.v
+hierarchy -check -top double_adder
+proc
+opt
+fsm
+opt
+techmap
+opt
+dfflibmap -liberty sg13g2_stdcell_typ_1p20V_25C.lib
+abc -liberty sg13g2_stdcell_typ_1p20V_25C.lib -D 10000
+clean -purge
+write_verilog -noattr double_adder_synth.v
