@@ -1,0 +1,13 @@
+read_liberty -lib sg13g2_stdcell_typ_1p20V_25C.lib
+read_verilog top.v Arithmetics_unit.v double_adder.v double_divider.v double_multiplier.v function_unit.v sine.v cosine.v tangent.v secant.v cosecant.v cotangent.v Control_unit.v
+hierarchy -check -top top
+proc
+opt
+fsm
+opt
+techmap
+opt
+dfflibmap -liberty sg13g2_stdcell_typ_1p20V_25C.lib
+abc -liberty sg13g2_stdcell_typ_1p20V_25C.lib -D 10000
+clean -purge
+write_verilog -noattr top_synth.v

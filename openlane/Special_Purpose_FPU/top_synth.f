@@ -1,0 +1,15 @@
+double_adder.v
+double_multiplier.v
+double_divider.v
+Arithmetics_unit.v
+Control_unit.v
+function_unit.v
+sine.v
+cosine.v
+secant.v
+cosecant.v
+tangent.v
+cotangent.v
+top_synth.v
+top_overall_tb.v
+sim_all.v
