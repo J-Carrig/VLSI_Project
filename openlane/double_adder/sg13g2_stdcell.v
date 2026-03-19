@@ -534,33 +534,18 @@ endmodule
 `endcelldefine
 
 // type: dfrbpq 
-`timescale 1ns/10ps
+`timescale 1ns/1ps
 `celldefine
+// Functional-only model for sg13g2_dfrbpq_1 (async active-low reset, resets Q to 0)
 module sg13g2_dfrbpq_1 (Q, D, RESET_B, CLK);
-	output Q;
-	input D, RESET_B, CLK;
-	reg notifier;
-	wire delayed_D, delayed_RESET_B, delayed_CLK;
-
-	// Function
-	wire int_fwire_IQ, int_fwire_r, xcr_0;
-
-	not (int_fwire_r, delayed_RESET_B);
-	ihp_dff_r_err (xcr_0, delayed_CLK, delayed_D, int_fwire_r);
-	ihp_dff_r (int_fwire_IQ, notifier, delayed_CLK, delayed_D, int_fwire_r, xcr_0);
-	buf (Q, int_fwire_IQ);
-
-	// Timing
-	specify
-		(negedge RESET_B => (Q+:1'b0)) = 0;
-		(posedge CLK => (Q+:D)) = 0;
-		$setuphold (posedge CLK, posedge D, 0, 0, notifier,,, delayed_CLK, delayed_D);
-		$setuphold (posedge CLK, negedge D, 0, 0, notifier,,, delayed_CLK, delayed_D);
-		$recrem (posedge RESET_B, posedge CLK, 0, 0, notifier,,, delayed_RESET_B, delayed_CLK);
-		$width (negedge RESET_B, 0, 0, notifier);
-		$width (posedge CLK, 0, 0, notifier);
-		$width (negedge CLK, 0, 0, notifier);
-	endspecify
+    output reg Q;
+    input D, RESET_B, CLK;
+    always @(posedge CLK or negedge RESET_B) begin
+        if (!RESET_B)
+            Q <= 1'b0;
+        else
+            Q <= D;
+    end
 endmodule
 `endcelldefine
 

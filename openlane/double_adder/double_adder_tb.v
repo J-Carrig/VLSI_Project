@@ -36,8 +36,8 @@ initial
         Tin_b = 64'h0;
         #10 rst = ~rst;
         #10 rst = ~rst;
-       // $dumpfile("gtk_double_adder.vcd");
-       // $dumpvars(0, double_adder_tb);
+        $dumpfile("gtk_double_adder.vcd");
+        $dumpvars(0, double_adder_tb);
     end
 
 always
